@@ -14,10 +14,11 @@ int _printf(const char * const format, ...)
 	int counter = 0;
 
 	data_t type[] = {
-/*		{"c", _printchar}, */
+		{"c", _printchar},
 	/*	{"i", _printint}, */
 	/*	{"d", _printdig}, */
 		{"s", _printstr},
+		{"%", _printp},
 		{NULL, NULL}
 	};
 
