@@ -16,6 +16,6 @@ int _printchar(va_list arguments);
 int _printstr(va_list arguments);
 int main(void);
 int _printnum(va_list arguments);
-
+int _printp(va_list arguments);
 
 #endif
