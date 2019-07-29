@@ -3,8 +3,8 @@
 
 /**
  * _printchar - prints character
- *
  * @arguments: character to print
+ * Return: 0
  */
 
 int _printchar(va_list arguments)
@@ -13,9 +13,8 @@ int _printchar(va_list arguments)
 
 	ch = va_arg(arguments, int);
 	if (ch != 0)
-	{	
+	{
 		_putchar(ch);
-		
 	}
 	else
 	{

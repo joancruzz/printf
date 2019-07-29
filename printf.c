@@ -1,15 +1,12 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
- * printf - prints all datatypes
+ * _printf - prints all datatypes
  * @format: data type to be printed
  * Return: length of input
  */
 int _printf(const char * const format, ...)
 {
-
-	int x;
-	int y;
+	int x, y;
 	va_list arguments;
 	int counter = 0;
 
@@ -21,12 +18,10 @@ int _printf(const char * const format, ...)
 		{"%", _printp},
 		{NULL, NULL}
 	};
-
 	va_start(arguments, format);
 
 	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
 		return (-1);
-
 	for (x = 0; format != NULL && format[x] != '\0'; x++)
 	{
 		if (format[x] != '%')
@@ -40,7 +35,6 @@ int _printf(const char * const format, ...)
 			{
 				counter = counter + type[y].f(arguments);
 				break;
-
 			}
 		}
 		x++;

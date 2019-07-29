@@ -4,10 +4,16 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+/**
+  * struct datatypes - struct that groups all datatypes
+  * @f: function pointer
+  * @result: struct pointer to argument
+  */
+
 typedef struct datatypes
 {
 	char *result;
-	int(*f)(va_list arguments);
+	int (*f)(va_list arguments);
 } data_t;
 
 int _putchar(char c);
