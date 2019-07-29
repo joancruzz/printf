@@ -15,8 +15,8 @@ int _printf(const char * const format, ...)
 
 	data_t type[] = {
 		{"c", _printchar},
-	/*	{"i", _printint}, */
-	/*	{"d", _printdig}, */
+		{"i", _printnum},
+		{"d", _printnum},
 		{"s", _printstr},
 		{"%", _printp},
 		{NULL, NULL}
