@@ -1,0 +1,17 @@
+.\" Manpage for printf.
+.TH man 3 "30 July 2019" "1.0" "printf man page"
+.SH NAME
+printf \- produces output baesed on format
+.SH SYNOPSIS
+int printf(const char *format, ...)
+.SH DESCRIPTION
+printf produces output according to a format. It writes output to stdout, the standard output stream.
+.SH OPTIONS
+The character % is followed by zero or more of the following flags:
+d, i \- The int argument is converted to signed decimal notation.
+c \- The int argument is converted to an unsigned char, and the resulting character is written.
+s \- The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0').
+.SH BUGS
+No known bugs.
+.SH AUTHOR
+Andrew Cox and Joan Cruz
