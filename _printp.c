@@ -17,5 +17,5 @@ int _printp(va_list arguments)
 	{
 		_putchar(per);
 	}
-	return (0);
+	return (1);
 }

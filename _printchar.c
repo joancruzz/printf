@@ -10,15 +10,16 @@
 int _printchar(va_list arguments)
 {
 	char ch;
+	int counter = 0;
 
 	ch = va_arg(arguments, int);
 	if (ch != 0)
 	{
-		_putchar(ch);
+		counter += _putchar(ch);
 	}
 	else
 	{
 		return (0);
 	}
-	return (0);
+	return (counter);
 }
