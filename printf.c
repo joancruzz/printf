@@ -29,8 +29,6 @@ int _printf(const char * const format, ...)
 			counter = counter + _putchar(format[x]);
 			continue;
 		}
-		else
-			counter++;
 
 		for(y = 0; type[y].result != NULL; y++)
 		{
