@@ -14,6 +14,7 @@ int _printstr(va_list arguments)
 	str = va_arg(arguments, char *);
 	if (str == NULL)
 	{
+		_printf("(null)");
 		return (0);
 	}
 	for (i = 0; str[i] != '\0'; i++)
