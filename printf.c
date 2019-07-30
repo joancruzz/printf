@@ -29,11 +29,6 @@ int _printf(const char * const format, ...)
 			counter = counter + _putchar(format[index]);
 			continue;
 		}
-		if (format[0] == '%' && format[1] == '%')
-		{
-			counter = counter + _putchar(format[0]);
-			counter++;
-		}
 		for (y = 0; type[y].result != NULL; y++)
 		{
 			if (*type[y].result == format[index + 1])
