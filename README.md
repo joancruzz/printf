@@ -8,6 +8,6 @@ This is our first partner project for Holberton School - and our first time expe
 _printf();
 
 # Contributers
-Joan Cruz - follow on twitter @joancruzzzz
+Joan Cruz - follow on twitter @joancruzzzz<br/>
 Andrew Cox - follow on twitter @AndrewC795
 
