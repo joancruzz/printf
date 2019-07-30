@@ -6,7 +6,7 @@
  */
 int _printf(const char * const format, ...)
 {
-	int x, y;
+	int index, y;
 	va_list arguments;
 	int counter = 0;
 
@@ -21,27 +21,32 @@ int _printf(const char * const format, ...)
 	va_start(arguments, format);
 
 	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
-		return (-1);
-	for (x = 0; format != NULL && format[x] != '\0'; x++)
+		return (0);
+	for (index = 0; format[index] != '\0'; index++)
 	{
-		if (format[x] != '%')
+		if (format[index] != '%')
 		{
-			counter = counter + _putchar(format[x]);
+			counter = counter + _putchar(format[index]);
+			continue;
+		}
+		if (format[0] == '%' && format[1] == '%')
+		{
+			counter = counter + _putchar(format[index]);
 			continue;
 		}
 		for (y = 0; type[y].result != NULL; y++)
 		{
-			if (*type[y].result == format[x + 1])
+			if (*type[y].result == format[index + 1])
 			{
 				counter = counter + type[y].f(arguments);
 				break;
 			}
 		}
-		x++;
+		index++;
 		if (type[y].result == NULL)
 		{
 			counter = counter + _putchar('%');
-			counter = counter + _putchar(format[x]);
+			counter = counter + _putchar(format[index]);
 		}
 	}
 	va_end(arguments);
