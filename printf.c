@@ -31,8 +31,8 @@ int _printf(const char * const format, ...)
 		}
 		if (format[0] == '%' && format[1] == '%')
 		{
-			counter = counter + _putchar(format[index]);
-			continue;
+			counter = counter + _putchar(format[0]);
+			counter++;
 		}
 		for (y = 0; type[y].result != NULL; y++)
 		{
