@@ -29,8 +29,7 @@ int _printf(const char * const format, ...)
 			counter = counter + _putchar(format[x]);
 			continue;
 		}
-
-		for(y = 0; type[y].result != NULL; y++)
+		for (y = 0; type[y].result != NULL; y++)
 		{
 			if (*type[y].result == format[x + 1])
 			{
@@ -39,7 +38,6 @@ int _printf(const char * const format, ...)
 			}
 		}
 		x++;
-
 		if (type[y].result == NULL)
 		{
 			counter = counter + _putchar('%');
