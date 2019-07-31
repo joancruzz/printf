@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdio.h>
 
 /**
   * struct datatypes - struct that groups all datatypes
