@@ -6,9 +6,8 @@
  */
 int _printf(const char * const format, ...)
 {
-	int index, y;
+	int index = 0, y = 0, counter = 0;
 	va_list arguments;
-	int counter = 0;
 
 	data_t type[] = {
 		{"c", _printchar},
@@ -20,8 +19,9 @@ int _printf(const char * const format, ...)
 	};
 	va_start(arguments, format);
 
-	if ((format[0] == '%' && format[1] == '\0') || format == NULL)
-		return (0);
+	if ((format[index] == '%' && format[index + 1] == '\0') || format == NULL)
+		return (-1);
+	index = 0;
 	for (index = 0; format[index] != '\0'; index++)
 	{
 		if (format[index] != '%')
