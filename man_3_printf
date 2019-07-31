@@ -1,16 +1,30 @@
-.\" Manpage for printf.
-.TH man 3 "30 July 2019" "1.0" "printf man page"
+.\" Manpage for _printf.
+.TH man 3 "30 July 2019" "1.0" "_printf man page"
 .SH NAME
-printf \- produces output baesed on format
+_printf \- produces output baesed on format
 .SH SYNOPSIS
-int printf(const char *format, ...)
+.IP
+#include "holberton.h"
+.IP
+int _printf(const char *format, ...)
 .SH DESCRIPTION
-printf produces output according to a format. It writes output to stdout, the standard output stream.
-.SH OPTIONS
+.IP
+_printf produces output according to a format. It writes output to stdout, the standard output stream.
+.SH Return Value
+.IP
+Upon successful return, _printf returns the number of characters printed (excluding the null byte used to end output to strings).
+.IP
+If an output error is encountered, a negative value is returned.
+.SH Conversion Specifiers
 The character % is followed by zero or more of the following flags:
-d, i \- The int argument is converted to signed decimal notation.
-c \- The int argument is converted to an unsigned char, and the resulting character is written.
-s \- The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0').
+.IP -i
+The int argument is converted to signed decimal notation.
+.IP -d
+The int argument is converted to signed decimal notation.
+.IP -c
+The int argument is converted to an unsigned char, and the resulting character is written.
+.IP -s
+The const char * argument is expected to be a pointer to an array of character type (pointer to a string). Characters from the array are written up to (but not including) a terminating null byte ('\0').
 .SH BUGS
 No known bugs.
 .SH AUTHOR
