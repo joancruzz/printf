@@ -19,7 +19,7 @@ int _printf(const char * const format, ...)
 	};
 	va_start(arguments, format);
 
-	if ((format[index] == '%' && format[index + 1] == '\0') || format == NULL)
+	if ((format == NULL) ||(format[index] == '%' && format[index + 1] == '\0'))
 		return (-1);
 	index = 0;
 	for (index = 0; format[index] != '\0'; index++)
