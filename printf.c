@@ -19,11 +19,12 @@ int _printf(const char * const format, ...)
 	};
 	va_start(arguments, format);
 
-	if ((format == NULL) ||(format[index] == '%' && format[index + 1] == '\0'))
+	if ((format == NULL))
 		return (-1);
-	index = 0;
 	for (index = 0; format[index] != '\0'; index++)
 	{
+		if ((format[index] == '%' && format[index - 1] == '%' && format[index + 1] == '\0'))
+			return (-1);
 		if (format[index] != '%')
 		{
 			counter = counter + _putchar(format[index]);
