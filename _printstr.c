@@ -10,12 +10,14 @@ int _printstr(va_list arguments)
 {
 	const char *str;
 	int i;
+	char *null_str = "(null)";
 
 	str = va_arg(arguments, char *);
 	if (str == NULL)
 	{
-		_printf("(null)");
-		return (0);
+		for (i = 0; null_str[i] != '\0'; i++)
+			_putchar(null_str[i]);
+		return (i);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
