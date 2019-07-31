@@ -6,15 +6,9 @@
  * Return: 1
  */
 
-int _printp(va_list arguments)
+int _printp(va_list arguments __attribute__((unused)))
 {
-	char *percent;
-	int per = '%';
+		_putchar('%');
+		return (1);
 
-	percent = va_arg(arguments, char*);
-	if (percent != NULL)
-	{
-		_putchar(per);
-	}
-	return (1);
 }

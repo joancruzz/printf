@@ -10,16 +10,15 @@ int _printf(const char * const format, ...)
 	va_list arguments;
 
 	data_t type[] = {
-		{"c", _printchar},
-		{"i", _printnum},
-		{"d", _printnum},
-		{"s", _printstr},
-		{"%", _printp},
-		{NULL, NULL}
+		{"c", _printchar}, {"i", _printnum},
+		{"d", _printnum}, {"s", _printstr},
+		{"%", _printp}, {NULL, NULL},
 	};
 	va_start(arguments, format);
 
 	if ((format == NULL) || (format[index] == '%' && format[index + 1] == '\0'))
+		return (-1);
+	if (format[index] == '%' && format[index + 1] == ' ')
 		return (-1);
 	for (index = 0; format[index] != '\0'; index++)
 	{
